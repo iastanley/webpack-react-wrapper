@@ -4,16 +4,16 @@ module.exports = {
   entry: './index.js',
   output: {
     libraryTarget: 'var',
-    library: 'showChatTemplate',
+    library: 'renderReactWidget',
     path: path.resolve(__dirname, 'builds'),
-    filename: 'chat-template.js',
+    filename: 'react-widget.js',
   },
   module: {
     rules: [
       {
-        test: /\.js/,
-        include: __dirname,
-        loader: 'babel-loader'
+        use: 'babel-loader',
+        test: /\.js$/,
+        include: __dirname
       }
     ],
   },
